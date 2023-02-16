@@ -1,25 +1,26 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  mode: "jit",
   theme: {
-    fontFamily: {
-      Poppins: "Poppins"
-    },
     extend: {
-      keyframes: {
-        slide: {
-          "0%,100%" : {transform: "translateX(5%)"},
-          "50%": {transform: "translateX(-120%)"}
-        }
-      }
+      colors: {
+        primary: "#00040f",
+        secondary: "#00f6ff",
+        dimWhite: "rgba(255, 255, 255, 0.7)",
+        dimBlue: "rgba(9, 151, 124, 0.1)",
+      },
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
     },
     screens: {
       xs: "480px",
+      ss: "620px",
       sm: "768px",
       md: "1060px",
+      lg: "1200px",
+      xl: "1700px",
     },
   },
   plugins: [],

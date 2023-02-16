@@ -1,15 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-
-function App() {
-  const [count, setCount] = useState(0)
-
+import React from "react";
+import { AppContext } from "./context/contextApi";
+const App = () => {
   return (
-    <div className="text-3xl bg-black">
-      App
-    </div>
-  )
-}
+    <AppContext>
+      <div>App</div>
+    </AppContext>
+  );
+};
 
-export default App
+export default App;
