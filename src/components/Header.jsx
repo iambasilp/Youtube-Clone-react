@@ -103,7 +103,7 @@ const Header = () => {
           <img
             src="https://xsgames.co/randomusers/avatar.php?g=male"
             alt="random image"
-            srcset=""
+            
           />
         </div>
       </div>
