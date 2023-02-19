@@ -39,7 +39,7 @@ const VideoCard = ({ video }) => {
                 <span>{`${abbreviateNumber(video?.stats?.views,2)} views`}</span>
                 <span className="flex text-[22px] leading-none font-bold text-white/[0.7] relative top-[-7px] mx-1">.</span>
                 <span className="truncate">
-                  {video?.publishedTimeText}
+                  {video.publishedTimeText}
                 </span>
             </div>
           </div>

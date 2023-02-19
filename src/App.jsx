@@ -1,7 +1,10 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AppContext } from "./context/contextApi";
-import { Header, Feed, SearchResult, VideoDetails } from "./components";
+import Feed from "./components/Feed";
+import Header from "./components/Header";
+import SearchResult from './components/SearchResult'
+import VideoDetails from './components/VideoDetails'
 const App = () => {
   return (
     <AppContext>
