@@ -4,26 +4,23 @@ import { useParams } from "react-router-dom";
 import { fetchDataFromApi } from "../utils/api";
 import { Context } from "../context/contextApi";
 import LeftNav from "./LeftNav";
-import SearchResultVideo from './SearchResultVideo'
+import SearchResultVideoCard from "./SearchResultVideo.jsx";
 
 const SearchResult = () => {
     const [result, setResult] = useState();
-    console.log(result);
     const { searchQuery } = useParams();
-    console.log(useParams());
     const { setLoading } = useContext(Context);
 
     useEffect(() => {
         document.getElementById("root").classList.remove("custom-h");
         fetchSearchResults();
     }, [searchQuery]);
-    
 
     const fetchSearchResults = () => {
-      setLoading(true);
-        fetchDataFromApi(`search/?q=${searchQuery}`).then(({response}) => {
-            console.log(response, "basil");
-            setResult(response?.contents);
+        setLoading(true);
+        fetchDataFromApi(`search/?q=${searchQuery}`).then((res) => {
+            console.log(res);
+            setResult(res?.contents);
             setLoading(false);
         });
     };
@@ -37,17 +34,15 @@ const SearchResult = () => {
                         if (item?.type !== "video") return false;
                         let video = item.video;
                         return (
-                            <SearchResultVideo
+                            <SearchResultVideoCard
                                 key={video.videoId}
                                 video={video}
                             />
                         );
                     })}
-
                 </div>
             </div>
         </div>
-        
     );
 };
 
