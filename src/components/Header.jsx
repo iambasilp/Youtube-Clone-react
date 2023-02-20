@@ -12,17 +12,19 @@ import { Context } from "../context/contextApi";
 import Loader from "./shared/Loader";
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const { loading } = useContext(Context);
-  const [toggler, setToggler] = useState(false);
+  const { loading, mobileMenu, setMobileMenu } = useContext(Context);
   const navigate = useNavigate();
   const searchQueryHandler = (event) => {
     if (
       (event?.key === "Enter" || event === "searchButton") &&
       searchQuery?.length > 0
     ) {
-      navigate(`searchResult/${searchQuery}`);
+      navigate(`/searchResult/${searchQuery}`);
     }
   };
+  const mobileMenuToggle = () => {
+    setMobileMenu(!mobileMenu);
+};
 
   const { pathname } = useLocation();
   const pageName = pathname.split("/").filter(Boolean)?.[0];
@@ -31,20 +33,16 @@ const Header = () => {
       {loading && <Loader />}
       <div className="flex items-center h-5">
         {pageName !== "video" && (
-          <div className="md:hidden flex items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]">
-            {toggler ? (
+          <div className="md:hidden flex items-center justify-center h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]" onClick={mobileMenuToggle}>
+            {mobileMenu ? (
               <CgClose
                 className="text-white text-xl"
-                onClick={() => {
-                  setToggler(false);
-                }}
+               
               />
             ) : (
               <SlMenu
                 className="text-white text-xl"
-                onClick={() => {
-                  setToggler(true);
-                }}
+               
               />
             )}
           </div>

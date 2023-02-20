@@ -7,6 +7,7 @@ const AppContext = (props) => {
     const [loading, setLoading] = useState(false)
     const [searchResults, setSearchResults] = useState([])
     const [selectCategories, setSelectCategories] = useState('New')
+    const [mobileMenu, setMobileMenu] = useState(false);
      
     useEffect(()=>{
         fetchSelectedCategoryData(selectCategories)
@@ -27,6 +28,8 @@ const AppContext = (props) => {
         setSearchResults,
         selectCategories,
         setSelectCategories,
+        mobileMenu,
+        setMobileMenu
       }}>
           {props.children}
       </Context.Provider>
