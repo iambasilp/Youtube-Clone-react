@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import LeftNavMenuItem from "./LeftNavMenuItem";
 import { categories } from "../utils/constants";
 import { MdAccountCircle } from "react-icons/md";
-import About from "./About";
 import { Context } from "../context/contextApi";
 const LeftNav = () => {
   const { selectCategories, setSelectCategories, mobileMenu } =
@@ -39,7 +38,7 @@ const LeftNav = () => {
                   navigate("/");
                 }}
                 className={
-                  selectCategories === category.name ? "bg-white/0.15" : ""
+                  selectCategories === category.name ? "bg-red-700" : ""
                 }
               />
               {category.divider && <hr className="my-5 border-white/[0.2]" />}

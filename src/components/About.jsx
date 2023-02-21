@@ -12,6 +12,7 @@ const About = () => {
       trends in the industry. Let's Talk
       <a href="https://github.com/iambasilp" className="my-4 px-4 py-2 bg-red-800 rounded-sm">Github</a>
     </div>
+    
   );
 };
 
