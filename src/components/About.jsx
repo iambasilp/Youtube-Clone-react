@@ -9,7 +9,7 @@ const About = () => {
       Express.js, React, and Node.js) and am skilled in both front-end and
       back-end web development. I am a creative problem-solver and quick
       learner, always eager to stay updated with the latest technologies and
-      trends in the industry. Let's Talk
+      trends in the industry. Let's Talk.
       <a href="https://github.com/iambasilp" className="my-4 px-4 py-2 bg-red-800 rounded-sm">Github</a>
     </div>
     
