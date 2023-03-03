@@ -82,7 +82,7 @@ const Header = () => {
             <IoIosSearch className="text-white text-xl" />
           </button>
         </div>
-        <div className="flex items-center justify-center h-10 ml-2 w-10 rounded-full bg-[#212121] hover:bg-[#303030]/[0.6]">
+        <div className="hidden md:flex items-center justify-center h-10 ml-2 w-10 rounded-full bg-[#212121] hover:bg-[#303030]/[0.6]">
                 <MdKeyboardVoice className="text-white text-xl cursor-pointer"/>
             
          </div>
